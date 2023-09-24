@@ -36,7 +36,7 @@ class doublyLinkedList:
             self.tail.next = None
             poppedNode.prev = None
         self.length -= 1
-        return poppedNode
+        return poppedNode.item
         
     # Remove the head of linked list 
     def shift(self):
@@ -51,7 +51,7 @@ class doublyLinkedList:
             self.head.prev = None
             oldHead.next = None
         self.length -= 1
-        return oldHead
+        return oldHead.item
         
     #adding the element to the head of the linked list
     def unshift(self,value):
@@ -65,6 +65,34 @@ class doublyLinkedList:
             self.head = newNode
         self.length += 1
         return self.length
+    
+    #to get any element from the entered index
+    def get(self,index):
+        if index<0 or index >= self.length:
+            return False
+        if index <= self.length//2:
+            count = 0
+            current = self.head
+            while count != index :
+                current = current.next
+                count += 1
+            
+        else: 
+            count = self.length-1
+            current = self.tail
+            while count != index:
+                current = current.prev
+                count -= 1
+        print(current.item)
+        return current
+    
+    #setting new value to a desired index
+    def setl(self, index, newVal):
+        foundNode = self.get(index)
+        if foundNode :
+            foundNode.item = newVal
+            return True
+        return False
         
     #display out doubly linked list
     def display(self):
@@ -85,11 +113,14 @@ ll.push(20)
 ll.push(30)
 ll.push(40)
 ll.push(50)
-ll.display()
-ll.pop()
-ll.display()
-ll.shift()
-ll.display()
-ll.unshift(100)
-ll.display()
 
+ll.display()
+ll.get(1)
+print("Poppped element",ll.pop())
+ll.display()
+ll.setl(2,100)
+ll.display()
+print("Removed from front",ll.shift())
+ll.display()
+print(ll.unshift(101))
+ll.display()
