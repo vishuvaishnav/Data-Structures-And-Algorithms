@@ -94,6 +94,48 @@ class doublyLinkedList:
             return True
         return False
         
+    #inserting a new node anywhere in the doubly linked list    
+    def insert(self, index, item):
+        if index<0 or index > self.length :
+            return False
+        if index == 0:
+            return self.unshift(item)
+        if index == self.length:
+            return self.push(item)
+        
+        newNode = Node(item)
+        beforeNode = self.get(index-1)
+        afterNode = beforeNode.next
+        
+        beforeNode.next = newNode
+        newNode.prev = beforeNode
+        afterNode.prev = newNode
+        newNode.next = afterNode
+        
+        self.length += 1
+        
+        return self.length
+        
+    #deleting a node anywhere in the doubly linked list   
+    def remove(self,index):
+        if index<0 or index > self.length :
+            return False
+        if index == 0:
+            return self.shift()
+        if index == self.length:
+            return self.pop()  
+            
+        removedNode = self.get(index)
+        removedNode.prev.next = removedNode.next
+        removedNode.next.prev = removedNode.prev
+        
+        removedNode.prev = None
+        removedNode.next = None
+        
+        self.length -= 1
+        return self.length
+            
+            
     #display out doubly linked list
     def display(self):
         if self.head is None:
@@ -123,4 +165,8 @@ ll.display()
 print("Removed from front",ll.shift())
 ll.display()
 print(ll.unshift(101))
+ll.display()
+ll.insert(2,56)
+ll.display()
+ll.remove(3)
 ll.display()
