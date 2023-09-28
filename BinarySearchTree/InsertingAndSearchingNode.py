@@ -26,8 +26,22 @@ class bst:
                 if current.right == None :
                     current.right = newNode
                 current = current.right
-            
-            
+    def find(self,value):
+        if self.root==None :
+            return False
+        current = self.root
+        found = False
+        
+        while current and not(found):
+            if value < current.val:
+                current = current.left
+            elif value > current.val:
+                current =  current.right
+            else:
+                found = True
+        if not(found):
+            return "Not Found"
+        return "Found "+str(current.val)
 tree = bst()
 tree.insert(8)
 tree.insert(3)
@@ -43,3 +57,4 @@ print(tree.root.left.val)
 print(tree.root.right.right.val)
 print(tree.root.left.left.val)
 print(tree.root.val)
+print(tree.find(10))
