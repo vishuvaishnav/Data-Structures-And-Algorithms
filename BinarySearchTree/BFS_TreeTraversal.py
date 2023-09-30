@@ -39,7 +39,13 @@ class bst:
             if node.right :
                 queue.append(node.right)
         return data
-        
+
+'''
+        10
+    6       15
+  3   8        20
+''' 
+
 tree = bst()
 tree.insert(10)
 tree.insert(6)
