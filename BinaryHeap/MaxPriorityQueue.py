@@ -27,6 +27,7 @@ class PriorityQueue:
         if len(self.values)==1:
             maxm = self.values[0]
             self.values.pop()
+            print(maxm.val,maxm.priority)
             return maxm
         maxm = self.values[0]
         end = self.values.pop()
@@ -34,9 +35,11 @@ class PriorityQueue:
             self.values[0] = end
             #calling bubble up func.
             self.bubbledown()
+            print(maxm.val,maxm.priority)
             return maxm
             
         #if length is 0 then returning empty as message
+        print(maxm.val,maxm.priority)
         return self.values
         
     def bubbledown(self):
@@ -83,21 +86,12 @@ hospital.enqueue("glass in foot",3)
 hospital.display()
 print("----------------------------------------")
 hospital.dequeue()
-hospital.display()
 print("----------------------------------------")
 hospital.dequeue()
-hospital.display()
 print("----------------------------------------")
 hospital.dequeue()
-hospital.display()
 print("----------------------------------------")
 hospital.dequeue()
-hospital.display()
 print("----------------------------------------")
 hospital.dequeue()
-hospital.display()
-hospital.dequeue()
-hospital.display()
 print("----------------------------------------")
-hospital.dequeue()
-hospital.display()
