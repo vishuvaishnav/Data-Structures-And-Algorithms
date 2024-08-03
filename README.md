@@ -78,7 +78,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions, issues, or suggestions, please feel free to contact me:
 
 - **Author**: Vishu Vaishnav
-- **GitHub**: [https://github.com/yourusername](https://github.com/VISHUVAISHNAV)
+- **GitHub**: [https://github.com/vishuvaishnav](https://github.com/VISHUVAISHNAV)
 
 ---
 
@@ -86,4 +86,4 @@ Thank you for visiting this repository. Happy coding!
 
 ---
 
-[![Made by Vishu Vaishnav](https://img.shields.io/badge/Made%20by-Vishu%20Vaishnav-blue?style=flat-square)](https://github.com/yourusername)
+[![Made by Vishu Vaishnav](https://img.shields.io/badge/Made%20by-Vishu%20Vaishnav-blue?style=flat-square)](https://github.com/vishuvaishnav)
