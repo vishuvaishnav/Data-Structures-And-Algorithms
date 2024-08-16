@@ -6,7 +6,7 @@ def next_permutation(arr,n):
             break
     if k == -1:
         arr.sort()
-        print(arr)
+        return(arr)
     else:
         for i in range(n-1,k-1,-1):
             if arr[i]>arr[k] :
