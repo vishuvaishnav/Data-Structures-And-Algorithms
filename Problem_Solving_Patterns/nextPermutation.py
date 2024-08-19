@@ -1,8 +1,8 @@
 def next_permutation(arr,n):
     k = -1
     for i in range(n-2,-1,-1):
-        if arr[i] > arr[i-1]:
-            k = i-1
+        if arr[i] < arr[i+1]:
+            k = i
             break
     if k == -1:
         arr.reverse()
